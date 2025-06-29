@@ -11,18 +11,18 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 def download_page(url):
-    ''' Stáhne HTML stránku z dané adresy URL a vrátí její obsah jako text. '''
+    ''' Stáhne HTML stránku z dané adresy URL a vrátí její obsah jako text '''
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.text
 
 def make_soup(html):
-    ''' Vytvoří a vrátí objekt BeautifulSoup, který umožňuje snadno hledat data v HTML. '''
+    ''' Vytvoří a vrátí objekt BeautifulSoup, který umožňuje snadno hledat data v HTML '''
     return BeautifulSoup(html, "html.parser")
 
 def find_municipalities(soup):
-    ''' Najde všechny obce a jejich odkazy na podrobné výsledky. '''
+    ''' Najde všechny obce a jejich odkazy na podrobné výsledky '''
     municipalities = {}
     for row in soup.find_all("tr"):
         code_cell = row.find("td", class_="cislo")
@@ -37,7 +37,7 @@ def find_municipalities(soup):
     return municipalities
 
 def process_municipality(code, url, name):
-    ''' Zpracuje stránku jedné obce – voliče, platné hlasy a hlasy stran. '''
+    ''' Zpracuje stránku jedné obce – voliče, platné hlasy a hlasy stran '''
     html = download_page(url)
     soup = make_soup(html)
 
