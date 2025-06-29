@@ -59,11 +59,12 @@ Jak spustit skript krok za krokem:
 1.Nainstaluj potřebné knihovny
 2.Otevři terminál (nebo příkazový řádek) a spusť následující příkaz:
     'pip install requests beautifulsoup4 pandas'
-
-    Tento příkaz nainstaluje knihovny, které skript používá:
+    
+ Tento příkaz nainstaluje všechny potřebné knihovny, které skript používá:
       requests – pro stahování HTML stránek z webu
       beautifulsoup4 – pro parsování a extrakci dat z HTML
       pandas – pro uložení a zpracování dat ve formě tabulky (CSV)
+   
 
 3.Získej odkaz na stránku s obcemi
   Například:
@@ -73,9 +74,8 @@ Jak spustit skript krok za krokem:
 4.Spusť skript z terminálu nebo příkazového řádku
     Přejdi do složky, kde je uložený soubor main.py, a spusť skript tímto způsobem:
     python3 main.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=2&xnumnuts=2101" vystup.csv
-
-    První parametr (v uvozovkách) je URL adresa, odkud se načítají odkazy na obce.
-    Druhý parametr je název výstupního souboru, např. vystup.csv.
+    První parametr (v uvozovkách) je URL adresa, odkud se načítají odkazy na obce.     
+    Druhý parametr je název výstupního souboru, např. vystup.csv.       
 
 Po dokončení Skript vypíše zprávu o počtu zpracovaných obcí a vytvoří soubor CSV ve stejné složce. 
 Tento soubor obsahuje výsledky voleb podle obcí a lze jej otevřít např. v Excelu.
